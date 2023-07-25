@@ -1,5 +1,5 @@
 import useComponentToast from "@/utils/useComponentToast";
-import { Box, Button, ListItem, Text, UnorderedList } from "@chakra-ui/react";
+import { Box, ListItem, Text, UnorderedList } from "@chakra-ui/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -8,11 +8,7 @@ const Sidebar = () => {
   const { showToast } = useComponentToast();
   const logout = () => {
     router.push("/");
-    showToast(
-      "Successful!",
-      "Logged out successfully.",
-      "success"
-    );
+    showToast("Successful!", "Logged out successfully.", "success");
   };
 
   return (
@@ -26,15 +22,17 @@ const Sidebar = () => {
       top={0}
       left={0}
     >
-      <Text
-        fontSize="26px"
-        fontWeight="800"
-        color="brand.primary2"
-        letterSpacing="1px"
-        textShadow="10px 0px 10px #E7C1F5"
-      >
-        Sendstack
-      </Text>
+      <Link href="/my-profile">
+        <Text
+          fontSize="26px"
+          fontWeight="800"
+          color="brand.primary2"
+          letterSpacing="1px"
+          textShadow="10px 0px 10px #E7C1F5"
+        >
+          Sendstack
+        </Text>
+      </Link>
       <Box>
         <UnorderedList
           m="20px 0 0 0"

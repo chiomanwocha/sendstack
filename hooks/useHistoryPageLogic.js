@@ -2,7 +2,9 @@ import useGetHistory from "@/libs/request/useGetHistory";
 import { useState } from "react";
 
 const useHistoryPageLogic = () => {
-  const { data, isLoading } = useGetHistory();
+  const [page, setPage] = useState(0);
+  const { data, isLoading } = useGetHistory(page + 1);
+
   const tableHead = [
     "batch id",
     "pick up name",
@@ -11,6 +13,7 @@ const useHistoryPageLogic = () => {
     "date created",
     "",
   ];
+
   const [openDetails, setOpenDetails] = useState(false);
   const [detailsBody, setDetailsBody] = useState({});
   return {
@@ -21,6 +24,8 @@ const useHistoryPageLogic = () => {
     setOpenDetails,
     detailsBody,
     setDetailsBody,
+    page,
+    setPage,
   };
 };
 

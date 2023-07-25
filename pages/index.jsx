@@ -1,9 +1,11 @@
 import AppButton from "@/components/AppButton";
 import Asteriks from "@/components/Asteriks";
 import useLogicPageLogic from "@/hooks/useLoginPageLogic";
-import { Avatar, Box, Input, Text } from "@chakra-ui/react";
+import { Box, Input, Text } from "@chakra-ui/react";
+import logo from "@/public/logo.png";
 
 import React from "react";
+import Image from "next/image";
 
 const initialState = {
   firstname: "",
@@ -12,7 +14,8 @@ const initialState = {
 };
 
 const Login = () => {
-  const { login, inputDetails, userDetails, setUserDetails } = useLogicPageLogic(initialState);
+  const { login, inputDetails, userDetails, setUserDetails } =
+    useLogicPageLogic(initialState);
   return (
     <Box
       bg="linear-gradient(180deg, rgba(245,251,255,1) 0%, rgba(251,239,255,1) 62%)"
@@ -26,10 +29,9 @@ const Login = () => {
         py={{ base: 20, md: 40 }}
       >
         <Box display="flex" justifyContent="center">
-          <Avatar
-            src="https://scontent.flos1-2.fna.fbcdn.net/v/t39.30808-1/278223249_110695638275758_1722150398171146232_n.png?stp=c26.0.200.200a_dst-png_p200x200&_nc_cat=107&cb=99be929b-59f725be&ccb=1-7&_nc_sid=c6021c&_nc_eui2=AeEnbZvNLrsV914S487gifNOh96ktyAsLCyH3qS3ICwsLOcSdaLgOGKRfduIZrCRFOLja8xeutpEnnDyWilK7Cgn&_nc_ohc=gN-4vT7CN6oAX8tSn3W&_nc_ht=scontent.flos1-2.fna&oh=00_AfCQ69kuNbcdaCtKx62WexLaxU3tpr_ycQL0DBabVuH9oA&oe=64BC6C69"
-            name="send stack"
-          />
+          <Box>
+            <Image src={logo} width={50} height={50} alt="sendstack logo" />
+          </Box>
         </Box>
         <Box textAlign="center">
           <Text

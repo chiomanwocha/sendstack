@@ -15,6 +15,7 @@ import DeliveryDetailsModal from "@/components/DeliveryDetailsModal";
 import AppButton from "@/components/AppButton";
 import useHistoryPageLogic from "@/hooks/useHistoryPageLogic";
 import convertDateForm from "@/utils/convertDateForm";
+import Pagination from "@/components/Pagination";
 
 const TrackDelivery = () => {
   const {
@@ -25,6 +26,8 @@ const TrackDelivery = () => {
     setOpenDetails,
     detailsBody,
     setDetailsBody,
+    page,
+    setPage,
   } = useHistoryPageLogic();
 
   return (
@@ -96,6 +99,7 @@ const TrackDelivery = () => {
               onClose={() => setOpenDetails(false)}
               details={detailsBody}
             />
+            <Pagination data={data} page={page} setPage={setPage} />
           </>
         )}
       </Box>
