@@ -1,3 +1,7 @@
+<img width="1440" alt="Screenshot 2023-07-25 at 17 50 03" src="https://github.com/chiomanwocha/sendstack/assets/77916165/75489b36-72e8-4e37-a910-2c63f99d6ebf">
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
