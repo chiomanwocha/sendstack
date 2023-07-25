@@ -2,8 +2,8 @@ import useGetHistory from "@/libs/request/useGetHistory";
 import { useState } from "react";
 
 const useHistoryPageLogic = () => {
-  const [page, setPage] = useState(0);
-  const { data, isLoading } = useGetHistory(page + 1);
+  const [page, setPage] = useState(1);
+  const { data, isLoading } = useGetHistory(page);
 
   const tableHead = [
     "batch id",
