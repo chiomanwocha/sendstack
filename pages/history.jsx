@@ -38,7 +38,7 @@ const TrackDelivery = () => {
           <Loader />
         ) : (
           <>
-            <TableContainer mt={10} height="70vh" overflowY="scroll">
+            <TableContainer mt={10} height={{base: "50vh", md: "70vh"}} overflowY="scroll">
               <Table colorScheme="pink">
                 <Thead bg="#FAF5FF">
                   <Tr>

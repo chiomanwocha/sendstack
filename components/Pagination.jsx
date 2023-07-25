@@ -11,15 +11,20 @@ const Pagination = ({ data, page, setPage }) => {
 
   return (
     <Box
-      p={5}
+      px={5}
+      py={{base: 5, md: 0}}
+      gap={{base: 2, md: 0}}
       display="flex"
       flexDirection={{ base: "column", md: "row" }}
       justifyContent="space-between"
       alignItems={{ base: "start", md: "center" }}
+      
     >
       <Text fontSize="sm">
         Showing page {data?.data?.page} of {data?.data?.totalPages}
       </Text>
+      <Box overflow="scroll" width="100%">
+
       <ReactPaginate
         className="paginate"
         previousClassName={`${data?.data?.page === 1 && "hide-cursor"}`}
@@ -41,6 +46,7 @@ const Pagination = ({ data, page, setPage }) => {
         activeClassName="paginate-active"
         forcePage={pageOffset}
       />
+      </Box>
     </Box>
   );
 };

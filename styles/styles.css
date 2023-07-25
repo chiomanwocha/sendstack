@@ -13,6 +13,7 @@
   font-size: 14px;
   display: flex;
   gap: 20px;
+  overflow: scroll;
 }
 
 .paginate li {
@@ -34,5 +35,6 @@
 
 .hide-cursor {
   cursor: default;
-  visibility: hidden;
+  display: none;
+  /* visibility: hidden; */
 }
