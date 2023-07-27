@@ -26,7 +26,7 @@ const useDeliveryDetailsModalLogic = (onClose, details) => {
   };
 
   const hasCancelledStatus = details?.drops?.some(
-    (item) => item.status === "CANCELLED"
+    (item) => item.status === "CANCELLED" || "ASSIGNED"
   );
 
   return {
