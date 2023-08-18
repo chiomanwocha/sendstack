@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import useRequestDelivery from "@/libs/mutations/useRequestDelivery";
 import useComponentToast from "@/utils/useComponentToast";
-import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 const useTotalModalPriceLogic = (updatedTotalDropOffLocationArray, prices, pickupInfo, onClose) => {
@@ -17,12 +16,12 @@ const useTotalModalPriceLogic = (updatedTotalDropOffLocationArray, prices, picku
   const router = useRouter();
 
   const { showToast } = useComponentToast();
-  const [errorMessage, setErrorMessage] = useState("");
 
   const { mutate, isLoading: isRequestDeliveryLoading } = useRequestDelivery(
     (res) => {
       if (res?.response?.data?.status === false) {
-        setErrorMessage(res?.response?.data?.message);
+        showToast("Error", res?.response?.data?.message, "error");
+
       } else {
         showToast("Success", res?.message, "success");
         router.push("/my-profile");
@@ -33,12 +32,7 @@ const useTotalModalPriceLogic = (updatedTotalDropOffLocationArray, prices, picku
       showToast("Error", err?.message ?? "Try again", "error");
     }
   );
-
-  useEffect(() => {
-    if (errorMessage) {
-      showToast("Error", errorMessage, "error");
-    }
-  }, [errorMessage]);
+  
   const handleAction = () => {
     const payload = {
       pickup: {

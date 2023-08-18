@@ -24,7 +24,8 @@ const TotalPriceModal = ({
     useTotalModalPriceLogic(
       updatedTotalDropOffLocationArray,
       prices,
-      pickupInfo
+      pickupInfo,
+      onClose,
     );
 
   return (

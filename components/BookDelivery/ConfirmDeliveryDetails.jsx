@@ -42,7 +42,7 @@ const ConfirmDeliveryDetails = ({
           <Text fontWeight="700">Recipient&apos;s Details:</Text>
           <Stack spacing={3} height="40vh" overflowY="scroll" ml={20} my={2}>
             {totalDropOffLocation.map((item, index, array) => (
-              <>
+              <Box key={item.address}>
                 <DisplayDetails
                   key={item.address}
                   name={item.recipientName}
@@ -51,7 +51,7 @@ const ConfirmDeliveryDetails = ({
                   altPhoneNumber={item.altRecipientNumber}
                 />
                 {index !== array.length - 1 ? <Divider /> : null}
-              </>
+              </Box>
             ))}
           </Stack>
         </Box>

@@ -7,7 +7,6 @@ const useDeliveryDetailsModalLogic = (onClose, details) => {
   const client = useQueryClient();
   const { mutate, isLoading } = useCancelDelivery(
     (res) => {
-      console.log(res);
       if (res?.status === false) {
         showToast("Error", res?.response?.data?.message, "error");
       } else {
@@ -17,7 +16,7 @@ const useDeliveryDetailsModalLogic = (onClose, details) => {
       }
     },
     (err) => {
-      console.log(err);
+      showToast("Error", err?.message, "error");
     }
   );
 
@@ -26,7 +25,7 @@ const useDeliveryDetailsModalLogic = (onClose, details) => {
   };
 
   const hasCancelledStatus = details?.drops?.some(
-    (item) => item.status === "CANCELLED" || "ASSIGNED"
+    (item) => item?.status === "CANCELLED" ||  item?.status === "ASSIGNED"
   );
 
   return {
